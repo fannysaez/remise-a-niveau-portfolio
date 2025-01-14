@@ -195,25 +195,29 @@ h3
 
 .services ul {
   list-style-type: none;
-  display: flex; /* Transforme la liste en flexbox */
-  flex-direction: row; /* Affiche les éléments les uns en dessous des autres */
-  align-items: center; /* Centre les éléments verticalement */
-  justify-content: space-around;
+  display: flex; /* Maintient les éléments en ligne */
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */ 
 }
-.services li{
+
+.services li {
+  margin: 10px; /* Ajoute une marge pour un meilleur espacement */
   padding: 15px 35px;
-  background-color: rgb(110, 110, 110);
-  color:rgb(255, 255, 255);
+  background-color: rgba(110, 110, 110, 0.8); /* Ajoute une légère transparence */
+  color: #fff;
   border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.739); /* Ombre douce */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
   font-family: 'Courier New', Courier, monospace;
 }
-.services li:hover{
-  background-color: rgb(222, 184, 135);
-  color:rgb(0, 0, 0);
-  cursor:pointer;
-  border: dotted 2px rgb(255, 255, 255);
-  font-family:cursive;
+
+.services li:hover {
+  background-color: #EEDD82; /* Couleur plus vibrante */
+  color: #000;
+  cursor: pointer;
+  border: 2px solid #EEDD82; /* Bordure avec la même couleur */
+  transform: scale(1.05); /* Agrandit légèrement l'élément au survol */
+  transition: all 0.3s ease; /* Ajoute une transition pour une meilleure animation */
 }
 .label {
   opacity: 0;
@@ -291,3 +295,17 @@ h3
   animation: caption 12300ms infinite 7200ms;
 }
 /* Calculate AUTOPLAY for CAPTION - END */
+
+@media (max-width: 768px) {
+  .services li {
+    width: 45%; 
+    margin: 10px 5px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 100%; 
+    margin: 15px 0;
+  }
+}
