@@ -296,16 +296,72 @@ h3
 }
 /* Calculate AUTOPLAY for CAPTION - END */
 
-@media (max-width: 768px) {
+/* 🌟 Pour les très petits écrans (ex: smartphones en mode portrait) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .header {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .gallery-item {
+    width: 100%; 
+    margin: 10px 0;
+  }
+
+  .contact {
+    max-width: 90%;
+    padding: 5px;
+  }
+
+  .services ul {
+    flex-direction: column; 
+  }
+
   .services li {
-    width: 55%; 
-    margin: 10px 5px; 
+    width: 80%;
   }
 }
 
-@media (max-width: 768px) {
+/* 🌟 Pour les écrans standards (tablettes, ordinateurs portables) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .gallery-item {
-    width: 100%; 
-    margin: 15px 0;
+    width: 45%;
+  }
+
+  .services ul {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .services li {
+    width: 45%;
+  }
+}
+
+/* 🌟 Pour les grands écrans */
+@media (min-width: 1200px) {
+  .gallery-item {
+    width: 30%;
+  }
+
+  .services li {
+    width: 30%;
   }
 }
